@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/zephyr/bootstrap.min.css" integrity="sha512-tVaFJG+ePp27IMFymeEddl8DmqmDjlc2eInwfQ83Bddk8TC0lXUZ9kPy0VKGyQr52CY4THcBRBvCEZnsh63WmA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>News App</title>
+</head>
+
+<div class="navbar fixed-top navbar-dark bg-dark">
+  <div class="container">
+    <h4 style="color:rgb(255, 255, 255)">News App <h4 style="color: rgb(25, 107, 0);">DJANGO FRAMEWORK</h4>
+    </h4>
+    <img src="{% static 'images/dj.png' %}" class="image" style="width:90px; ">
+  </div>
+</div>
+
+<!-- Card for header -->
+<div class="jumbotron" style="text-align: center; margin-top: 20%; margin-bottom: 15%;">
+  <h2>Latest BBC News using<a href="https://newsapi.org" style="text-decoration: none" ;> news API</a></h2>
+  <h1>ShynHsiri</h1>
+  <img src="{% static 'images/newspaper.png' %}" class="image" style="width:150px; margin-bottom:-50px; ">
+</div>
+
+<!-- Main -->
+<div class="container">
+  {% for hl, des, img in mylist %}
+
+  <div class="card border-dark mb-3">
+    <img class="card-img-top" src="{{ img }}" alt="image">
+    <div class="card-body">
+      <h3 class="card-title" style="color: rgb(255, 0, 0);">Headline:</h3>
+      <h5 class="card-text">{{ hl }}{{ value|linebreaks }}</h5>
+      <h3 class="card-title" style="color: red;">Description:</h3>
+      <h5 class="card--text">{{ des }}{{ value|linebreaks }}</h5>
+    </div>
+  </div>
+  {% endfor %}
+
+  </body>
+
+</html>
